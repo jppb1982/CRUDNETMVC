@@ -1,0 +1,62 @@
+﻿@model CRUDNETMVC.Models.Contacto
+@{
+    ViewData["Title"] = "Editar contacto";
+}
+
+<h1 class="text-center">Contactos con .NET 8 (.NET Core MVC)</h1>
+
+<!--Formulario-->
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Editar contacto</strong></h3>
+            </div>
+            <div class="card-body">
+                <!--Al no tener el <form> el "method" declarado lo toma por defecto al POST-->
+                <form asp-action="Editar">
+
+                    <!-->Id del usuario como campo oculto-->
+                    <input type="hidden" asp-for="Id" />
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <!--Nombre-->
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Ingresa el nombre." />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <!--Telefono-->
+                    <div class="form-group">
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" placeholder="Ingresa el teléfono." />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+
+                    <!--Celular-->
+                    <div class="form-group">
+                        <label asp-for="Celular" class="control-label"></label>
+                        <input asp-for="Celular" class="form-control" placeholder="Ingresa el celular." />
+                        <span asp-validation-for="Celular" class="text-danger"></span>
+                    </div>
+
+                    <!--Email-->
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" placeholder="Ingresa el email." />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <!--Botón submit-->
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto"><i class="fa fa-user" aria-hidden="true"></i> Editar usuario</button>
+                    </div>
+
+                </form>
+                <a asp-controller="Inicio" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
